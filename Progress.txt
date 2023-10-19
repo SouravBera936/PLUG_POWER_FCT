@@ -1,0 +1,5 @@
+OLEDB PROVIDER AND ITS ACCESS CODE :
+ Dim cn As OleDb.OleDbConnection
+cn = New OleDbConnection
+            cn.ConnectionString = "Provider=" & Config.TextBox2.Text & ";Data Source=" & Config.TextBox1.Text & "; Persist Security Info=" & Config.TextBox6.Text & ";"
+            cn.Open()
