@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0820FF4C-1144-4F92-8867-4A46D05D8EC6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PLU_POWER_FCT.My.MyApplication</StartupObject>
+    <RootNamespace>PLU_POWER_FCT</RootNamespace>
+    <AssemblyName>PLU_POWER_FCT</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PLU_POWER_FCT.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PLU_POWER_FCT.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>plug_power_0_12.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MadMilkman.Ini, Version=1.0.6.0, Culture=neutral, PublicKeyToken=4e0b5157a7ffbb74, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MadMilkman\MadMilkman.Ini\Bin\MadMilkman.Ini.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CONFIG.Designer.vb">
+      <DependentUpon>CONFIG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CONFIG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FAILUREVIEW.Designer.vb">
+      <DependentUpon>FAILUREVIEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FAILUREVIEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IMGCOMP.Designer.vb">
+      <DependentUpon>IMGCOMP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IMGCOMP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.vb">
+      <DependentUpon>LOGIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MAIN.Designer.vb">
+      <DependentUpon>MAIN.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PASSWORD RST.Designer.vb">
+      <DependentUpon>PASSWORD RST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PASSWORD RST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PS_CTRL.vb" />
+    <Compile Include="SERIALVER.Designer.vb">
+      <DependentUpon>SERIALVER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SERIALVER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SETUP.Designer.vb">
+      <DependentUpon>SETUP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SETUP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STARTUP.Designer.vb">
+      <DependentUpon>STARTUP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STARTUP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSREG.Designer.vb">
+      <DependentUpon>SYSREG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SYSREG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TIMER.Designer.vb">
+      <DependentUpon>TIMER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TIMER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uniflash_1.vb" />
+    <Compile Include="UUT RESULT.Designer.vb">
+      <DependentUpon>UUT RESULT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UUT RESULT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CONFIG.resx">
+      <DependentUpon>CONFIG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAILUREVIEW.resx">
+      <DependentUpon>FAILUREVIEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IMGCOMP.resx">
+      <DependentUpon>IMGCOMP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MAIN.resx">
+      <DependentUpon>MAIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PASSWORD RST.resx">
+      <DependentUpon>PASSWORD RST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SERIALVER.resx">
+      <DependentUpon>SERIALVER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SETUP.resx">
+      <DependentUpon>SETUP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STARTUP.resx">
+      <DependentUpon>STARTUP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSREG.resx">
+      <DependentUpon>SYSREG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TIMER.resx">
+      <DependentUpon>TIMER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UUT RESULT.resx">
+      <DependentUpon>UUT RESULT.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="plug_power_0_12.ico" />
+    <None Include="Project Files\exchange.png" />
+    <None Include="Project Files\enable.png" />
+    <None Include="Project Files\clock.png" />
+    <None Include="Project Files\reuse.png" />
+    <None Include="Project Files\delete.png" />
+    <None Include="Project Files\pause.png" />
+    <None Include="Project Files\play-button-arrowhead.png" />
+    <None Include="Project Files\play.png" />
+    <None Include="Project Files\scan.png" />
+    <None Include="Project Files\scanner.png" />
+    <None Include="Project Files\gear.png" />
+    <None Include="Project Files\question.png" />
+    <None Include="Project Files\info.png" />
+    <None Include="Project Files\yield_1.png" />
+    <None Include="Project Files\yield.png" />
+    <None Include="Project Files\reset-password.png" />
+    <None Include="Project Files\user_rem.png" />
+    <None Include="Project Files\add-user.png" />
+    <None Include="Resources\plug_power_0_12.jpg" />
+    <None Include="Resources\Centum logo.jpg" />
+    <None Include="Project Files\setting.png" />
+    <None Include="Project Files\download.png" />
+    <None Include="Project Files\Spinner.gif" />
+    <None Include="Project Files\charlie-loader.gif" />
+    <None Include="Project Files\forbidden.png" />
+    <None Include="Project Files\button.png" />
+    <None Include="Project Files\logout.png" />
+    <None Include="Project Files\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="BASICFORMATTEDIOLib">
+      <Guid>{709F7EC2-AB81-11D4-98E6-00108301CB39}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>12</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDAOSP">
+      <Guid>{E0E270C2-C0BE-11D0-8FE4-00A0C90A6341}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>1033</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDASC">
+      <Guid>{2206CEB0-19C1-11D1-89E0-00C04FD7A829}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="OLEDBError">
+      <Guid>{C8B522D5-5CF3-11CE-ADE5-00AA0044773D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VisaComLib">
+      <Guid>{DB8CBF00-D6D3-11D4-AA51-00A024EE30BD}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>12</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fody">
+      <Version>4.2.1</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="nanoFramework.Tools.Debugger.Net">
+      <Version>2.4.34</Version>
+    </PackageReference>
+    <PackageReference Include="nanoFramework.Tools.FirmwareFlasher">
+      <Version>2.5.38</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Polly">
+      <Version>7.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="PropertyChanged.Fody">
+      <Version>2.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.ComponentModel.Annotations">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.IO">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.IO.Ports">
+      <Version>7.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Security.Cryptography.Algorithms">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Security.Cryptography.Encoding">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Security.Cryptography.Primitives">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Security.Cryptography.X509Certificates">
+      <Version>4.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

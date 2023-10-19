@@ -1,0 +1,2610 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "Fody/4.2.1": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "nanoFramework.Tools.Debugger.Net/2.4.34": {
+        "type": "package",
+        "dependencies": {
+          "Polly": "7.2.3",
+          "PropertyChanged.Fody": "2.6.1",
+          "System.IO.Ports": "7.0.0"
+        },
+        "compile": {
+          "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll": {}
+        },
+        "runtime": {
+          "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/net472/FodyWeavers.xml": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
+      "nanoFramework.Tools.FirmwareFlasher/2.5.38": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.IO.Ports": "7.0.0",
+          "System.Net.Http": "4.3.4",
+          "nanoFramework.Tools.Debugger.Net": "2.4.34"
+        },
+        "frameworkAssemblies": [
+          "System.IO",
+          "System.Net.Http",
+          "System.Runtime",
+          "System.Security.Cryptography.Algorithms",
+          "System.Security.Cryptography.Encoding",
+          "System.Security.Cryptography.Primitives",
+          "System.Security.Cryptography.X509Certificates"
+        ],
+        "compile": {
+          "lib/net472/nanoFirmwareFlasher.Library.dll": {}
+        },
+        "runtime": {
+          "lib/net472/nanoFirmwareFlasher.Library.dll": {}
+        },
+        "build": {
+          "build/nanoFramework.Tools.FirmwareFlasher.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/7.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/Polly.dll": {}
+        },
+        "runtime": {
+          "lib/net472/Polly.dll": {}
+        }
+      },
+      "PropertyChanged.Fody/2.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "4.2.1"
+        },
+        "compile": {
+          "lib/net452/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/net452/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.ComponentModel.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net462/System.IO.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.IO.dll": {}
+        }
+      },
+      "System.IO.Ports/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net462/System.IO.Ports.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.IO.Ports.dll": {}
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.X509Certificates": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Net.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Net.Http.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net46/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.ComponentModel.Composition",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net462/System.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.Runtime.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Algorithms/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0",
+          "System.Security.Cryptography.Primitives": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net463/System.Security.Cryptography.Algorithms.dll": {}
+        },
+        "runtime": {
+          "lib/net463/System.Security.Cryptography.Algorithms.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll": {
+            "assetType": "runtime",
+            "rid": "osx"
+          },
+          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net463/System.Security.Cryptography.Algorithms.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Encoding/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Encoding.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Encoding.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net46/System.Security.Cryptography.Encoding.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Primitives/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Primitives.dll": {}
+        }
+      },
+      "System.Security.Cryptography.X509Certificates/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win": {
+      "Fody/4.2.1": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "nanoFramework.Tools.Debugger.Net/2.4.34": {
+        "type": "package",
+        "dependencies": {
+          "Polly": "7.2.3",
+          "PropertyChanged.Fody": "2.6.1",
+          "System.IO.Ports": "7.0.0"
+        },
+        "compile": {
+          "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll": {}
+        },
+        "runtime": {
+          "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/net472/FodyWeavers.xml": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
+      "nanoFramework.Tools.FirmwareFlasher/2.5.38": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.IO.Ports": "7.0.0",
+          "System.Net.Http": "4.3.4",
+          "nanoFramework.Tools.Debugger.Net": "2.4.34"
+        },
+        "frameworkAssemblies": [
+          "System.IO",
+          "System.Net.Http",
+          "System.Runtime",
+          "System.Security.Cryptography.Algorithms",
+          "System.Security.Cryptography.Encoding",
+          "System.Security.Cryptography.Primitives",
+          "System.Security.Cryptography.X509Certificates"
+        ],
+        "compile": {
+          "lib/net472/nanoFirmwareFlasher.Library.dll": {}
+        },
+        "runtime": {
+          "lib/net472/nanoFirmwareFlasher.Library.dll": {}
+        },
+        "build": {
+          "build/nanoFramework.Tools.FirmwareFlasher.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/7.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/Polly.dll": {}
+        },
+        "runtime": {
+          "lib/net472/Polly.dll": {}
+        }
+      },
+      "PropertyChanged.Fody/2.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "4.2.1"
+        },
+        "compile": {
+          "lib/net452/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/net452/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.ComponentModel.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net462/System.IO.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.IO.dll": {}
+        }
+      },
+      "System.IO.Ports/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net462/System.IO.Ports.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.IO.Ports.dll": {}
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.X509Certificates": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Net.Http.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/net46/System.Net.Http.dll": {}
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.ComponentModel.Composition",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net462/System.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.Runtime.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Algorithms/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0",
+          "System.Security.Cryptography.Primitives": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net463/System.Security.Cryptography.Algorithms.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/net463/System.Security.Cryptography.Algorithms.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Encoding/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Encoding.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/net46/System.Security.Cryptography.Encoding.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Primitives/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Primitives.dll": {}
+        }
+      },
+      "System.Security.Cryptography.X509Certificates/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "Fody/4.2.1": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "nanoFramework.Tools.Debugger.Net/2.4.34": {
+        "type": "package",
+        "dependencies": {
+          "Polly": "7.2.3",
+          "PropertyChanged.Fody": "2.6.1",
+          "System.IO.Ports": "7.0.0"
+        },
+        "compile": {
+          "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll": {}
+        },
+        "runtime": {
+          "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/net472/FodyWeavers.xml": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
+      "nanoFramework.Tools.FirmwareFlasher/2.5.38": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.IO.Ports": "7.0.0",
+          "System.Net.Http": "4.3.4",
+          "nanoFramework.Tools.Debugger.Net": "2.4.34"
+        },
+        "frameworkAssemblies": [
+          "System.IO",
+          "System.Net.Http",
+          "System.Runtime",
+          "System.Security.Cryptography.Algorithms",
+          "System.Security.Cryptography.Encoding",
+          "System.Security.Cryptography.Primitives",
+          "System.Security.Cryptography.X509Certificates"
+        ],
+        "compile": {
+          "lib/net472/nanoFirmwareFlasher.Library.dll": {}
+        },
+        "runtime": {
+          "lib/net472/nanoFirmwareFlasher.Library.dll": {}
+        },
+        "build": {
+          "build/nanoFramework.Tools.FirmwareFlasher.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/7.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/Polly.dll": {}
+        },
+        "runtime": {
+          "lib/net472/Polly.dll": {}
+        }
+      },
+      "PropertyChanged.Fody/2.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "4.2.1"
+        },
+        "compile": {
+          "lib/net452/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/net452/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.ComponentModel.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net462/System.IO.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.IO.dll": {}
+        }
+      },
+      "System.IO.Ports/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net462/System.IO.Ports.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.IO.Ports.dll": {}
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.X509Certificates": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Net.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Net.Http.dll": {}
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.ComponentModel.Composition",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net462/System.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.Runtime.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Algorithms/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0",
+          "System.Security.Cryptography.Primitives": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net463/System.Security.Cryptography.Algorithms.dll": {}
+        },
+        "runtime": {
+          "lib/net463/System.Security.Cryptography.Algorithms.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Encoding/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Encoding.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Encoding.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Primitives/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Primitives.dll": {}
+        }
+      },
+      "System.Security.Cryptography.X509Certificates/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x86": {
+      "Fody/4.2.1": {
+        "type": "package",
+        "build": {
+          "build/Fody.targets": {}
+        }
+      },
+      "nanoFramework.Tools.Debugger.Net/2.4.34": {
+        "type": "package",
+        "dependencies": {
+          "Polly": "7.2.3",
+          "PropertyChanged.Fody": "2.6.1",
+          "System.IO.Ports": "7.0.0"
+        },
+        "compile": {
+          "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll": {}
+        },
+        "runtime": {
+          "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/net472/FodyWeavers.xml": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
+      "nanoFramework.Tools.FirmwareFlasher/2.5.38": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.IO.Ports": "7.0.0",
+          "System.Net.Http": "4.3.4",
+          "nanoFramework.Tools.Debugger.Net": "2.4.34"
+        },
+        "frameworkAssemblies": [
+          "System.IO",
+          "System.Net.Http",
+          "System.Runtime",
+          "System.Security.Cryptography.Algorithms",
+          "System.Security.Cryptography.Encoding",
+          "System.Security.Cryptography.Primitives",
+          "System.Security.Cryptography.X509Certificates"
+        ],
+        "compile": {
+          "lib/net472/nanoFirmwareFlasher.Library.dll": {}
+        },
+        "runtime": {
+          "lib/net472/nanoFirmwareFlasher.Library.dll": {}
+        },
+        "build": {
+          "build/nanoFramework.Tools.FirmwareFlasher.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Polly/7.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/Polly.dll": {}
+        },
+        "runtime": {
+          "lib/net472/Polly.dll": {}
+        }
+      },
+      "PropertyChanged.Fody/2.6.1": {
+        "type": "package",
+        "dependencies": {
+          "Fody": "4.2.1"
+        },
+        "compile": {
+          "lib/net452/PropertyChanged.dll": {}
+        },
+        "runtime": {
+          "lib/net452/PropertyChanged.dll": {}
+        },
+        "build": {
+          "build/PropertyChanged.Fody.props": {}
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.ComponentModel.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.IO/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net462/System.IO.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.IO.dll": {}
+        }
+      },
+      "System.IO.Ports/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net462/System.IO.Ports.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.IO.Ports.dll": {}
+        },
+        "build": {
+          "buildTransitive/net462/_._": {}
+        }
+      },
+      "System.Net.Http/4.3.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.X509Certificates": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Net.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Net.Http.dll": {}
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.ComponentModel.Composition",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net462/System.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/net462/System.Runtime.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Algorithms/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0",
+          "System.Security.Cryptography.Primitives": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net463/System.Security.Cryptography.Algorithms.dll": {}
+        },
+        "runtime": {
+          "lib/net463/System.Security.Cryptography.Algorithms.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Encoding/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Encoding.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Encoding.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Primitives/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Primitives.dll": {}
+        }
+      },
+      "System.Security.Cryptography.X509Certificates/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fody/4.2.1": {
+      "sha512": "46t+e1eESclH4TkfqUEYAgZ1+ZbXSFS7GqSKvtcw6u2yT05heDKdzj1r3YA/6FCZM4uB4z7qRW9V+gBsCilonQ==",
+      "type": "package",
+      "path": "fody/4.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Fody.targets",
+        "fody.4.2.1.nupkg.sha512",
+        "fody.nuspec",
+        "netclassictask/Fody.dll",
+        "netclassictask/FodyCommon.dll",
+        "netclassictask/FodyHelpers.dll",
+        "netclassictask/FodyIsolated.dll",
+        "netclassictask/Mono.Cecil.Mdb.dll",
+        "netclassictask/Mono.Cecil.Mdb.pdb",
+        "netclassictask/Mono.Cecil.Pdb.dll",
+        "netclassictask/Mono.Cecil.Pdb.pdb",
+        "netclassictask/Mono.Cecil.Rocks.dll",
+        "netclassictask/Mono.Cecil.Rocks.pdb",
+        "netclassictask/Mono.Cecil.dll",
+        "netclassictask/Mono.Cecil.pdb",
+        "netstandardtask/Fody.dll",
+        "netstandardtask/FodyCommon.dll",
+        "netstandardtask/FodyHelpers.dll",
+        "netstandardtask/FodyIsolated.dll",
+        "netstandardtask/Mono.Cecil.Mdb.dll",
+        "netstandardtask/Mono.Cecil.Mdb.pdb",
+        "netstandardtask/Mono.Cecil.Pdb.dll",
+        "netstandardtask/Mono.Cecil.Pdb.pdb",
+        "netstandardtask/Mono.Cecil.Rocks.dll",
+        "netstandardtask/Mono.Cecil.Rocks.pdb",
+        "netstandardtask/Mono.Cecil.dll",
+        "netstandardtask/Mono.Cecil.pdb"
+      ]
+    },
+    "nanoFramework.Tools.Debugger.Net/2.4.34": {
+      "sha512": "+QLH66C/dceiSlyWyfOEM5lOYZb13w5TjxvuB+ludaKTtD1IsZ4XAeXHen6P98eppgp3OLEus1GfMq7aGDj5Fw==",
+      "type": "package",
+      "path": "nanoframework.tools.debugger.net/2.4.34",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "content/FodyWeavers.xml",
+        "contentFiles/any/net472/FodyWeavers.xml",
+        "contentFiles/any/net6.0/FodyWeavers.xml",
+        "images/nf-logo.png",
+        "lib/net472/nanoFramework.Tools.DebugLibrary.Net.dll",
+        "lib/net472/nanoFramework.Tools.DebugLibrary.Net.pdb",
+        "lib/net472/nanoFramework.Tools.DebugLibrary.Net.xml",
+        "lib/net6.0/nanoFramework.Tools.DebugLibrary.Net.dll",
+        "lib/net6.0/nanoFramework.Tools.DebugLibrary.Net.pdb",
+        "lib/net6.0/nanoFramework.Tools.DebugLibrary.Net.xml",
+        "nanoframework.tools.debugger.net.2.4.34.nupkg.sha512",
+        "nanoframework.tools.debugger.net.nuspec"
+      ]
+    },
+    "nanoFramework.Tools.FirmwareFlasher/2.5.38": {
+      "sha512": "afUlz9+okyDS2qbe5zaOutwzj3TeCsiKBwjESGiRx98q442fPoDj/QYGA9C4ogTHufPbKCfu1dNYloAE5ZCjzQ==",
+      "type": "package",
+      "path": "nanoframework.tools.firmwareflasher/2.5.38",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "build/nanoFramework.Tools.FirmwareFlasher.targets",
+        "images/nf-logo.png",
+        "lib/net472/nanoFirmwareFlasher.Library.dll",
+        "lib/net472/nanoFirmwareFlasher.Library.xml",
+        "lib/net6.0/nanoFirmwareFlasher.Library.dll",
+        "lib/net6.0/nanoFirmwareFlasher.Library.xml",
+        "nanoframework.tools.firmwareflasher.2.5.38.nupkg.sha512",
+        "nanoframework.tools.firmwareflasher.nuspec",
+        "tools/any/esp32bootloader/bootloader.bin",
+        "tools/any/esp32bootloader/partitions_16mb.bin",
+        "tools/any/esp32bootloader/partitions_2mb.bin",
+        "tools/any/esp32bootloader/partitions_4mb.bin",
+        "tools/any/esp32bootloader/partitions_8mb.bin",
+        "tools/any/esp32bootloader/test_startup.bin",
+        "tools/any/esp32s2bootloader/bootloader.bin",
+        "tools/any/esp32s2bootloader/partitions_16mb.bin",
+        "tools/any/esp32s2bootloader/partitions_4mb.bin",
+        "tools/any/esp32s2bootloader/partitions_8mb.bin",
+        "tools/any/esp32s2bootloader/test_startup.bin",
+        "tools/any/esptool/esptoolLinux/esptool",
+        "tools/any/esptool/esptoolMac/esptool",
+        "tools/any/esptool/esptoolWin/esptool.exe",
+        "tools/any/jlink/JLink.exe",
+        "tools/any/jlink/JLink_x64.dll",
+        "tools/any/jlinkCmds/erase_gg11.jlink",
+        "tools/any/jlinkCmds/list_probes.jlink",
+        "tools/any/jlinkCmds/test_connection.jlink",
+        "tools/any/jlinkLinux/JLinkExe",
+        "tools/any/jlinkMac/JLinkExe",
+        "tools/any/silink/JLinkARM.dll",
+        "tools/any/silink/Qt5Core.dll",
+        "tools/any/silink/Qt5Network.dll",
+        "tools/any/silink/emdll0.dll",
+        "tools/any/silink/libapack.dll",
+        "tools/any/silink/libgcc_s_dw2-1.dll",
+        "tools/any/silink/libstdc++-6.dll",
+        "tools/any/silink/libwinpthread-1.dll",
+        "tools/any/silink/silink.exe",
+        "tools/any/silink/zlib1.dll",
+        "tools/any/stlink/DFU_Driver/Driver/STM32Bootloader.inf",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/6cd5b628-b9d3-47dc-a144-0f1b1b37bebd/STM32Bootloader.inf",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/6cd5b628-b9d3-47dc-a144-0f1b1b37bebd/amd64/WdfCoInstaller01009.dll",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/6cd5b628-b9d3-47dc-a144-0f1b1b37bebd/amd64/winusbcoinstaller2.dll",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/6cd5b628-b9d3-47dc-a144-0f1b1b37bebd/stm32bootloader.cat",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/7f643872-82f8-456e-a1a7-a90af95ec250/STM32Bootloader.inf",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/7f643872-82f8-456e-a1a7-a90af95ec250/amd64/WdfCoInstaller01009.dll",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/7f643872-82f8-456e-a1a7-a90af95ec250/amd64/winusbcoinstaller2.dll",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/7f643872-82f8-456e-a1a7-a90af95ec250/stm32bootloader.cat",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/b7412da1-181b-4168-96d7-c8f5773a9024/STM32Bootloader.inf",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/b7412da1-181b-4168-96d7-c8f5773a9024/amd64/WdfCoInstaller01009.dll",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/b7412da1-181b-4168-96d7-c8f5773a9024/amd64/winusbcoinstaller2.dll",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/b7412da1-181b-4168-96d7-c8f5773a9024/stm32bootloader.cat",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/cfa2444c-a898-42a5-bf8c-04a079ccd856/STM32Bootloader.inf",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/cfa2444c-a898-42a5-bf8c-04a079ccd856/amd64/WdfCoInstaller01009.dll",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/cfa2444c-a898-42a5-bf8c-04a079ccd856/amd64/winusbcoinstaller2.dll",
+        "tools/any/stlink/DFU_Driver/Driver/SignedDrivers/cfa2444c-a898-42a5-bf8c-04a079ccd856/stm32bootloader.cat",
+        "tools/any/stlink/DFU_Driver/Driver/amd64/WdfCoInstaller01009.dll",
+        "tools/any/stlink/DFU_Driver/Driver/amd64/winusbcoinstaller2.dll",
+        "tools/any/stlink/DFU_Driver/Driver/installer_x64.exe",
+        "tools/any/stlink/DFU_Driver/Driver/installer_x86.exe",
+        "tools/any/stlink/DFU_Driver/Driver/stm32bootloader.cat",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x410.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x411.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x412.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x413.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x414.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x415.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x416.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x417.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x418.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x419.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x420.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x421.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x422.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x423.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x425.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x427.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x428.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x429.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x430.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x431.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x432.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x433.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x434.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x435.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x436.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x437.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x438.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x439.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x440.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x441.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x442.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x443.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x444.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x445.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x446.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x447.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x448.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x449.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x450.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x451.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x452.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x453.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x456.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x457.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x458.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x460.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x461.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x462.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x463.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x464.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x466.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x467.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x468.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x469.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x470.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x471.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x472.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x479.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x480.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x481.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x482.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x483.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x484.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x492.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x494.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x495.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x496.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x497.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x500.xml",
+        "tools/any/stlink/Data_Base/STM32_Prog_DB_0x501.xml",
+        "tools/any/stlink/bin/CubeProgrammer_API.dll",
+        "tools/any/stlink/bin/FileManager.dll",
+        "tools/any/stlink/bin/FlashLoader/0x410.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x411.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x412.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x413.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x414.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x415.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x416.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x417.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x418.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x419.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x420.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x421.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x422.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x423.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x425.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x427.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x428.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x429.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x430.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x431.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x432.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x433.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x434.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x435.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x436.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x437.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x438.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x439.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x440.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x441.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x442.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x443.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x444.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x445.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x446.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x447.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x448.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x449.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x450.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x451.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x452.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x456.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x457.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x458.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x460.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x461.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x462.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x463.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x464.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x466.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x467.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x468.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x469.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x470.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x471.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x472.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x479.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x480.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x481.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x482.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x483.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x484.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x485.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x492.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x494.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x494_FUS_Operator.bin",
+        "tools/any/stlink/bin/FlashLoader/0x494_nonSecure.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x495.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x495_FUS_Operator.bin",
+        "tools/any/stlink/bin/FlashLoader/0x495_nonSecure.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x496-nonSecure.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x496.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x496_FUS_Operator.bin",
+        "tools/any/stlink/bin/FlashLoader/0x497.stldr",
+        "tools/any/stlink/bin/FlashLoader/0x500.stldr",
+        "tools/any/stlink/bin/HSM_P11_Lib.dll",
+        "tools/any/stlink/bin/Qt5Core.dll",
+        "tools/any/stlink/bin/Qt5SerialPort.dll",
+        "tools/any/stlink/bin/Qt5Xml.dll",
+        "tools/any/stlink/bin/STLinkUSBDriver.dll",
+        "tools/any/stlink/bin/STM32_Programmer_CLI.exe",
+        "tools/any/stlink/bin/libeay32.dll",
+        "tools/any/stlink/bin/libgcc_s_dw2-1.dll",
+        "tools/any/stlink/bin/libstdc++-6.dll",
+        "tools/any/stlink/bin/libwinpthread-1.dll",
+        "tools/any/stlink/bin/mfc120.dll",
+        "tools/any/stlink/bin/msvcp120.dll",
+        "tools/any/stlink/bin/msvcr120.dll",
+        "tools/any/stlink/bin/stlibp11_SAM.conf",
+        "tools/any/stlink/bin/stlibp11_SAM.dll",
+        "tools/any/stlink/bin/xerces-c_3_1.dll",
+        "tools/any/stlink/stsw-link009_v3/amd64/WdfCoInstaller01009.dll",
+        "tools/any/stlink/stsw-link009_v3/amd64/winusbcoinstaller2.dll",
+        "tools/any/stlink/stsw-link009_v3/dpinst_amd64.exe",
+        "tools/any/stlink/stsw-link009_v3/dpinst_x86.exe",
+        "tools/any/stlink/stsw-link009_v3/readme.txt",
+        "tools/any/stlink/stsw-link009_v3/stlink_VCP.inf",
+        "tools/any/stlink/stsw-link009_v3/stlink_bridge_winusb.inf",
+        "tools/any/stlink/stsw-link009_v3/stlink_dbg_winusb.inf",
+        "tools/any/stlink/stsw-link009_v3/stlink_winusb_install.bat",
+        "tools/any/stlink/stsw-link009_v3/stlinkbridgewinusb_x64.cat",
+        "tools/any/stlink/stsw-link009_v3/stlinkbridgewinusb_x86.cat",
+        "tools/any/stlink/stsw-link009_v3/stlinkdbgwinusb_x64.cat",
+        "tools/any/stlink/stsw-link009_v3/stlinkdbgwinusb_x86.cat",
+        "tools/any/stlink/stsw-link009_v3/stlinkvcp_x64.cat",
+        "tools/any/stlink/stsw-link009_v3/stlinkvcp_x86.cat",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x410.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x411.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x412.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x413.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x414.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x415.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x416.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x417.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x418.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x419.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x420.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x421.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x422.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x423.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x425.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x427.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x428.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x429.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x430.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x431.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x432.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x433.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x434.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x435.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x436.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x437.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x438.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x439.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x440.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x441.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x442.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x443.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x444.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x445.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x446.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x447.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x448.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x449.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x450.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x451.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x452.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x453.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x456.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x457.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x458.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x460.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x461.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x462.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x463.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x464.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x466.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x467.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x468.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x469.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x470.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x471.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x472.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x474.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x479.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x480.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x481.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x482.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x483.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x484.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x485.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x492.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x494.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x495.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x496.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x497.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x500.xml",
+        "tools/any/stlinkLinux/Data_Base/STM32_Prog_DB_0x501.xml",
+        "tools/any/stlinkLinux/Drivers/rules/49-stlinkv2-1.rules",
+        "tools/any/stlinkLinux/Drivers/rules/49-stlinkv2.rules",
+        "tools/any/stlinkLinux/Drivers/rules/49-stlinkv3.rules",
+        "tools/any/stlinkLinux/Drivers/rules/50-usb-conf.rules",
+        "tools/any/stlinkLinux/Drivers/rules/Readme.txt",
+        "tools/any/stlinkLinux/Drivers/rules/version.txt",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x410.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x411.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x412.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x413.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x414.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x415.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x416.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x417.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x418.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x419.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x420.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x421.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x422.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x423.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x425.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x427.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x428.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x429.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x430.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x431.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x432.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x433.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x434.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x435.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x436.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x437.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x438.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x439.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x440.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x441.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x442.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x443.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x444.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x445.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x446.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x447.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x448.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x449.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x450.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x451.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x452.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x453.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x456.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x457.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x458.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x460.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x461.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x462.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x463.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x464.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x466.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x467.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x468.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x469.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x470.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x471.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x472.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x479.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x480.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x481.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x482.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x483.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x484.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x485.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x492.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x494.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x494_FUS_Operator.bin",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x494_nonSecure.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x495.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x495_FUS_Operator.bin",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x495_nonSecure.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x496-nonSecure.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x496.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x496_FUS_Operator.bin",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x497.stldr",
+        "tools/any/stlinkLinux/bin/FlashLoader/0x500.stldr",
+        "tools/any/stlinkLinux/bin/STM32_Programmer_CLI",
+        "tools/any/stlinkLinux/bin/platforms/libqxcb.so",
+        "tools/any/stlinkLinux/bin/version",
+        "tools/any/stlinkLinux/lib/libCubeProgrammer_API.so",
+        "tools/any/stlinkLinux/lib/libCubeProgrammer_API.so.1",
+        "tools/any/stlinkLinux/lib/libFileManager.so.1",
+        "tools/any/stlinkLinux/lib/libPreparation.so.1",
+        "tools/any/stlinkLinux/lib/libQt5Core.so.5",
+        "tools/any/stlinkLinux/lib/libQt5Core.so.56",
+        "tools/any/stlinkLinux/lib/libQt5DBus.so.5",
+        "tools/any/stlinkLinux/lib/libQt5Gui.so.5",
+        "tools/any/stlinkLinux/lib/libQt5Network.so.5",
+        "tools/any/stlinkLinux/lib/libQt5SerialPort.so.5",
+        "tools/any/stlinkLinux/lib/libQt5Widgets.so.5",
+        "tools/any/stlinkLinux/lib/libQt5XcbQpa.so.5",
+        "tools/any/stlinkLinux/lib/libQt5Xml.so.5",
+        "tools/any/stlinkLinux/lib/libSTLinkUSBDriver.so",
+        "tools/any/stlinkLinux/lib/libcrypto.so",
+        "tools/any/stlinkLinux/lib/libcrypto.so.1.0.0",
+        "tools/any/stlinkLinux/lib/libhsmp11.so",
+        "tools/any/stlinkLinux/lib/libicudata.so.56",
+        "tools/any/stlinkLinux/lib/libicui18n.so.56",
+        "tools/any/stlinkLinux/lib/libicuuc.so.56",
+        "tools/any/stlinkLinux/lib/libssl.so",
+        "tools/any/stlinkLinux/lib/libstp11_SAM.so",
+        "tools/any/stlinkLinux/lib/libstp11_SAM.so.conf",
+        "tools/any/stlinkLinux/lib/libxerces-c-3.1.so",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x410.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x411.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x412.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x413.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x414.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x415.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x416.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x417.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x418.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x419.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x420.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x421.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x422.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x423.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x425.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x427.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x428.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x429.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x430.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x431.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x432.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x433.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x434.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x435.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x436.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x437.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x438.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x439.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x440.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x441.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x442.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x443.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x444.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x445.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x446.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x447.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x448.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x449.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x450.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x451.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x452.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x453.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x456.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x457.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x458.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x460.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x461.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x462.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x463.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x464.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x466.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x467.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x468.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x469.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x470.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x471.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x472.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x474.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x479.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x480.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x481.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x482.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x483.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x484.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x485.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x492.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x494.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x495.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x496.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x497.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x500.xml",
+        "tools/any/stlinkMac/Data_Base/STM32_Prog_DB_0x501.xml",
+        "tools/any/stlinkMac/bin/FlashLoader/0x410.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x411.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x412.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x413.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x414.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x415.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x416.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x417.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x418.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x419.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x420.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x421.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x422.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x423.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x425.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x427.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x428.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x429.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x430.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x431.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x432.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x433.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x434.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x435.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x436.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x437.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x438.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x439.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x440.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x441.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x442.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x443.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x444.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x445.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x446.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x447.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x448.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x449.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x450.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x451.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x452.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x453.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x456.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x457.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x458.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x460.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x461.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x462.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x463.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x464.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x466.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x467.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x468.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x469.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x470.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x471.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x472.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x479.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x480.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x481.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x482.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x483.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x484.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x485.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x492.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x494.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x494_FUS_Operator.bin",
+        "tools/any/stlinkMac/bin/FlashLoader/0x494_nonSecure.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x495.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x495_FUS_Operator.bin",
+        "tools/any/stlinkMac/bin/FlashLoader/0x495_nonSecure.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x496-nonSecure.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x496.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x496_FUS_Operator.bin",
+        "tools/any/stlinkMac/bin/FlashLoader/0x497.stldr",
+        "tools/any/stlinkMac/bin/FlashLoader/0x500.stldr",
+        "tools/any/stlinkMac/bin/QtCore.framework/QtCore",
+        "tools/any/stlinkMac/bin/QtCore.framework/QtCore.prl",
+        "tools/any/stlinkMac/bin/QtCore.framework/QtCore_debug.prl",
+        "tools/any/stlinkMac/bin/QtCore.framework/Resources/Info.plist",
+        "tools/any/stlinkMac/bin/QtCore.framework/Versions/5/QtCore",
+        "tools/any/stlinkMac/bin/QtCore.framework/Versions/5/Resources/Info.plist",
+        "tools/any/stlinkMac/bin/QtCore.framework/Versions/Current/QtCore",
+        "tools/any/stlinkMac/bin/QtCore.framework/Versions/Current/Resources/Info.plist",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/QtSerialPort",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/QtSerialPort.prl",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/QtSerialPort_debug.prl",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Resources/Info.plist",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/5/QtSerialPort",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/5.11.2/QtSerialPort/private/qserialport_p.h",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/5.11.2/QtSerialPort/private/qserialportinfo_p.h",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/5.11.2/QtSerialPort/private/qtudev_p.h",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/5.11.2/QtSerialPort/private/qwinoverlappedionotifier_p.h",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/QSerialPort",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/QSerialPortInfo",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/QtSerialPort",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/QtSerialPortDepends",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/QtSerialPortVersion",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/qserialport.h",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/qserialportglobal.h",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/qserialportinfo.h",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Headers/qtserialportversion.h",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/QtSerialPort",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/QtSerialPort_debug",
+        "tools/any/stlinkMac/bin/QtSerialPort.framework/Versions/Current/Resources/Info.plist",
+        "tools/any/stlinkMac/bin/QtXml.framework/QtXml",
+        "tools/any/stlinkMac/bin/QtXml.framework/QtXml.prl",
+        "tools/any/stlinkMac/bin/QtXml.framework/QtXml_debug.prl",
+        "tools/any/stlinkMac/bin/QtXml.framework/Resources/Info.plist",
+        "tools/any/stlinkMac/bin/QtXml.framework/Versions/5/QtXml",
+        "tools/any/stlinkMac/bin/QtXml.framework/Versions/5/Resources/Info.plist",
+        "tools/any/stlinkMac/bin/QtXml.framework/Versions/Current/QtXml",
+        "tools/any/stlinkMac/bin/QtXml.framework/Versions/Current/Resources/Info.plist",
+        "tools/any/stlinkMac/bin/STM32CubeProgrammer",
+        "tools/any/stlinkMac/bin/STM32_Programmer_CLI",
+        "tools/any/stlinkMac/bin/libCubeProgrammer_API.1.0.0.dylib",
+        "tools/any/stlinkMac/bin/libCubeProgrammer_API.1.0.dylib",
+        "tools/any/stlinkMac/bin/libCubeProgrammer_API.1.dylib",
+        "tools/any/stlinkMac/bin/libCubeProgrammer_API.dylib",
+        "tools/any/stlinkMac/bin/libFileManager.1.0.0.dylib",
+        "tools/any/stlinkMac/bin/libFileManager.1.0.dylib",
+        "tools/any/stlinkMac/bin/libFileManager.1.dylib",
+        "tools/any/stlinkMac/bin/libFileManager.dylib",
+        "tools/any/stlinkMac/bin/libSTLinkUSBDriver.dylib",
+        "tools/any/stlinkMac/bin/libhsmp11.dylib",
+        "tools/any/stlinkMac/bin/libstP11_SAM.dylib",
+        "tools/any/stlinkMac/bin/libstP11_SAM.dylib.conf",
+        "tools/any/stlinkMac/bin/libusb-1.0.0.dylib",
+        "tools/any/stlinkMac/bin/libxerces-c-3.2.dylib",
+        "tools/any/stlinkMac/bin/version",
+        "tools/any/uniflash/CC1352P1F3.ccxml",
+        "tools/any/uniflash/CC1352R1F3.ccxml",
+        "tools/any/uniflash/DebugServer/bin/BatchDriverInstaller.exe",
+        "tools/any/uniflash/DebugServer/bin/DSLite.exe",
+        "tools/any/uniflash/DebugServer/bin/DebugProperties.dll",
+        "tools/any/uniflash/DebugServer/bin/DebugServer.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashCC26x2.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashCC26xx.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashCC3230SF.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashCC3235SF.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashDFUStellaris.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashDLLDB.xml",
+        "tools/any/uniflash/DebugServer/bin/FlashEthernetStellaris.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashFTDStellaris.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashGeneric.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashHercules.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashMSP432.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashSerialStellaris.dll",
+        "tools/any/uniflash/DebugServer/bin/FlashStellaris.dll",
+        "tools/any/uniflash/DebugServer/bin/LibraryLoader.dll",
+        "tools/any/uniflash/DebugServer/bin/SerialFlashProgrammer.dll",
+        "tools/any/uniflash/DebugServer/bin/XPCOMUtility.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-console-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-datetime-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-debug-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-delayload-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-errorhandling-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-fibers-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-file-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-file-l1-2-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-file-l2-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-handle-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-heap-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-interlocked-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-io-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-libraryloader-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-localization-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-localization-l1-2-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-localregistry-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-memory-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-misc-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-namedpipe-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-processenvironment-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-processthreads-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-processthreads-l1-1-1.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-profile-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-rtlsupport-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-string-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-synch-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-synch-l1-2-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-sysinfo-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-threadpool-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-timezone-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-util-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-xstate-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-core-xstate-l2-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-conio-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-convert-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-environment-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-filesystem-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-heap-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-locale-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-math-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-multibyte-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-private-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-process-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-runtime-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-stdio-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-string-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-time-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/api-ms-win-crt-utility-l1-1-0.dll",
+        "tools/any/uniflash/DebugServer/bin/msvcp120.dll",
+        "tools/any/uniflash/DebugServer/bin/msvcp140.dll",
+        "tools/any/uniflash/DebugServer/bin/msvcr120.dll",
+        "tools/any/uniflash/DebugServer/bin/ti_xpcom.dll",
+        "tools/any/uniflash/DebugServer/bin/tiofr11.dll",
+        "tools/any/uniflash/DebugServer/bin/tiofr_gnu.dll",
+        "tools/any/uniflash/DebugServer/bin/tiofr_tial.dll",
+        "tools/any/uniflash/DebugServer/bin/ucrtbase.dll",
+        "tools/any/uniflash/DebugServer/bin/vcruntime140.dll",
+        "tools/any/uniflash/DebugServer/components/components.txt",
+        "tools/any/uniflash/DebugServer/propertyDB/CC13_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/CC13x2_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/CC26_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/CC26x2_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/CC3230SF_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/CC3235SF_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/DFUTIVALM_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/FlashPropertiesTranslator.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/LMx_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432E401Y_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432E411Y_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432P4011_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432P401M_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432P401R_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432P401V_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432P401Y_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432P4111_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432P411V_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/MSP432P411Y_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/PropertiesDB.xml",
+        "tools/any/uniflash/DebugServer/propertyDB/Serial_FlashProperties.xml",
+        "tools/any/uniflash/DebugServer/schemas/PropertiesDB.xsd",
+        "tools/any/uniflash/DebugServer/schemas/PropertiesSaveSetting.xsd",
+        "tools/any/uniflash/DebugServer/scripts/flash.dsls",
+        "tools/any/uniflash/DebugServer/scripts/help.dsls",
+        "tools/any/uniflash/DebugServer/scripts/load.dsls",
+        "tools/any/uniflash/DebugServer/scripts/memory.dsls",
+        "tools/any/uniflash/DebugServer/scripts/serial.dsls",
+        "tools/any/uniflash/arm/FlashLoaderCC26x0.out",
+        "tools/any/uniflash/arm/FlashLoaderCC26x2.out",
+        "tools/any/uniflash/common/bin/CCReg.dll",
+        "tools/any/uniflash/common/bin/MiniDump.dll",
+        "tools/any/uniflash/common/bin/fsutil.dll",
+        "tools/any/uniflash/common/bin/libusb-1.0.dll",
+        "tools/any/uniflash/common/bin/setup_parser.dll",
+        "tools/any/uniflash/common/bin/ti_logger.dll",
+        "tools/any/uniflash/common/bin/ti_targetdb_parser.dll",
+        "tools/any/uniflash/common/bin/xerces-c_2_8.dll",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/ADI_4_AUX.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AON_BATMON.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AON_EVENT.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AON_IOC.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AON_PMCTL.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AON_RTC.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_AIODIO.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_ANAIF.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_EVCTL.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_MAC.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_SCE.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_SMPH.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_SPIM.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_SYSIF.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_TDC.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_TIMER01.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/AUX_TIMER2.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CC26x2_JSTATE_2_NotVisible.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CCFG.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CPU_DWT.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CPU_FPB.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CPU_ITM.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CPU_SCS.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CPU_TIPROP.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CPU_TPIU.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/CRYPTO.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/DDI_0_OSC.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/EVENT.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/FCFG1.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/FLASH.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/GPIO.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/GPT.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/I2C.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/I2S.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/IOC.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/PKA.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/PKA_INT.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/PRCM.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/RFC_DBELL.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/RFC_PWR.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/RFC_RAT.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/SMPH.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/SRAM_MMR.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/SSI.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/TRNG.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/UART.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/UDMA.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/VIMS.xml",
+        "tools/any/uniflash/common/targetdb/Modules/CC26xx/CC2652/WDT.xml",
+        "tools/any/uniflash/common/targetdb/Modules/ICEPickCHidden.xml",
+        "tools/any/uniflash/common/targetdb/Modules/cortexM4_NotVisible.xml",
+        "tools/any/uniflash/common/targetdb/Modules/cs_dap_NotVisible.xml",
+        "tools/any/uniflash/common/targetdb/connections/TIXDS110_Connection.xml",
+        "tools/any/uniflash/common/targetdb/cpus/cortex_m0.xml",
+        "tools/any/uniflash/common/targetdb/cpus/cortex_m0p.xml",
+        "tools/any/uniflash/common/targetdb/cpus/cortex_m3.xml",
+        "tools/any/uniflash/common/targetdb/cpus/cortex_m4.xml",
+        "tools/any/uniflash/common/targetdb/cpus/cortex_m4f.xml",
+        "tools/any/uniflash/common/targetdb/devices/CC3220.xml",
+        "tools/any/uniflash/common/targetdb/devices/CC3220S.xml",
+        "tools/any/uniflash/common/targetdb/devices/CC3220SF.xml",
+        "tools/any/uniflash/common/targetdb/devices/CC3220SF_SWD.xml",
+        "tools/any/uniflash/common/targetdb/devices/CC3220S_SWD.xml",
+        "tools/any/uniflash/common/targetdb/devices/CC3220_SWD.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc1352p1f3.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc1352r1f3.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2538nf11.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2538nf23.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2538nf53.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2538sf23.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2538sf53.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2620f128.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2630f128.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2640f128.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2640r2f.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2642r1f.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2650f128.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2652r1f.xml",
+        "tools/any/uniflash/common/targetdb/devices/cc2652rb1f.xml",
+        "tools/any/uniflash/common/targetdb/drivers/TI_reg_ids/CS_DAP_0_regids.xml",
+        "tools/any/uniflash/common/targetdb/drivers/TI_reg_ids/CS_DAP_PC_0_regids.xml",
+        "tools/any/uniflash/common/targetdb/drivers/TI_reg_ids/ICEPick_C_regids.xml",
+        "tools/any/uniflash/common/targetdb/drivers/TI_reg_ids/ICEPick_D_regids.xml",
+        "tools/any/uniflash/common/targetdb/drivers/TI_reg_ids/ICEPick_M_regids.xml",
+        "tools/any/uniflash/common/targetdb/drivers/TI_reg_ids/TMS470REX_regids.xml",
+        "tools/any/uniflash/common/targetdb/drivers/TI_reg_ids/TMS470RXX_regids.xml",
+        "tools/any/uniflash/common/targetdb/drivers/TI_reg_ids/regids.xsd",
+        "tools/any/uniflash/common/targetdb/drivers/tixds510cortexM.xml",
+        "tools/any/uniflash/common/targetdb/drivers/tixds510cs_dap.xml",
+        "tools/any/uniflash/common/targetdb/drivers/tixds510icepick_c.xml",
+        "tools/any/uniflash/common/targetdb/routers/cs_dap.xml",
+        "tools/any/uniflash/common/targetdb/routers/icepick_c.xml",
+        "tools/any/uniflash/common/targetdb/setup_parser.xsd",
+        "tools/any/uniflash/common/targetdb/setup_parser_cache.xsd",
+        "tools/any/uniflash/common/uscif/jioxds110.dll",
+        "tools/any/uniflash/common/uscif/jscxds110.dll",
+        "tools/any/uniflash/common/uscif/jtagdata.dll",
+        "tools/any/uniflash/common/uscif/xds110/boot_loader.axf",
+        "tools/any/uniflash/common/uscif/xds110/boot_loader.bin",
+        "tools/any/uniflash/common/uscif/xds110/firmware.bin",
+        "tools/any/uniflash/common/uscif/xdsalias.cfg",
+        "tools/any/uniflash/common/uscif/xdsboard.dll",
+        "tools/any/uniflash/common/uscif/xdserror.cfg",
+        "tools/any/uniflash/common/uscif/xdserror.dll",
+        "tools/any/uniflash/common/uscif/xdsfamily.cfg",
+        "tools/any/uniflash/common/uscif/xdsfast3.dll",
+        "tools/any/uniflash/common/uscif/xdsicicle.dll",
+        "tools/any/uniflash/common/uscif/xdsinitial.cfg",
+        "tools/any/uniflash/common/uscif/xdslocal.dll",
+        "tools/any/uniflash/common/uscif/xdsroute.dll",
+        "tools/any/uniflash/common/uscif/xdstrove.dll",
+        "tools/any/uniflash/dpinst_64_eng.exe",
+        "tools/any/uniflash/emulation/drivers/cmapi.dll",
+        "tools/any/uniflash/emulation/drivers/cmapi.out",
+        "tools/any/uniflash/emulation/drivers/dap.dll",
+        "tools/any/uniflash/emulation/drivers/eti_dap.dll",
+        "tools/any/uniflash/emulation/drivers/prsc.dll",
+        "tools/any/uniflash/emulation/drivers/tixds510cortexM.dvr",
+        "tools/any/uniflash/emulation/drivers/tixds510cs_dap.dvr",
+        "tools/any/uniflash/emulation/drivers/tixds510icepick_c.dvr",
+        "tools/any/uniflash/emulation/gel/cc26x2.gel",
+        "tools/any/uniflash/emulation/gel/cc26x2_xds.gel",
+        "tools/any/uniflash/emulation/gel/cc26xx_connect_util.gel",
+        "tools/any/uniflash/emulation/gel/cc26xx_icepick.gel",
+        "tools/any/uniflash/emulation/gel/cc26xx_jlink.gel",
+        "tools/any/uniflash/emulation/gel/images/cc26xx/cc26x2r1f_rtos_rom_syms.out",
+        "tools/any/uniflash/emulation/gel/images/cc26xx/cc26x2r1f_rtos_rom_syms_rev1.out",
+        "tools/any/uniflash/emulation/tpi/disassemble_capstone.dll",
+        "tools/any/uniflash/emulation/tpi/tpi.ini",
+        "tools/any/uniflash/emulation/tpi/tpi_cs_dap.dll",
+        "tools/any/uniflash/emulation/tpi/tpi_dap_pc.dll",
+        "tools/any/uniflash/emulation/tpi/tpi_icepick.dll",
+        "tools/any/uniflash/emulation/tpi/tpiarm_x.dll",
+        "tools/any/uniflash/emulation/windows/xds110_drivers/x64/WdfCoInstaller01009.dll",
+        "tools/any/uniflash/emulation/windows/xds110_drivers/x64/winusbcoinstaller2.dll",
+        "tools/any/uniflash/emulation/windows/xds110_drivers/xds110_debug.cat",
+        "tools/any/uniflash/emulation/windows/xds110_drivers/xds110_debug.inf",
+        "tools/any/uniflash/emulation/windows/xds110_drivers/xds110_ports.cat",
+        "tools/any/uniflash/emulation/windows/xds110_drivers/xds110_ports.inf"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Polly/7.2.3": {
+      "sha512": "DeCY0OFbNdNxsjntr1gTXHJ5pKUwYzp04Er2LLeN3g6pWhffsGuKVfMBLe1lw7x76HrPkLxKEFxBlpRxS2nDEQ==",
+      "type": "package",
+      "path": "polly/7.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Polly.png",
+        "lib/net461/Polly.dll",
+        "lib/net461/Polly.pdb",
+        "lib/net461/Polly.xml",
+        "lib/net472/Polly.dll",
+        "lib/net472/Polly.pdb",
+        "lib/net472/Polly.xml",
+        "lib/netstandard1.1/Polly.dll",
+        "lib/netstandard1.1/Polly.pdb",
+        "lib/netstandard1.1/Polly.xml",
+        "lib/netstandard2.0/Polly.dll",
+        "lib/netstandard2.0/Polly.pdb",
+        "lib/netstandard2.0/Polly.xml",
+        "polly.7.2.3.nupkg.sha512",
+        "polly.nuspec"
+      ]
+    },
+    "PropertyChanged.Fody/2.6.1": {
+      "sha512": "dCMGDjA7ahlpCIfvPxwXB6KIIeYtc2qALk69p22HQwgzKJQG25l87l5skk5ZBV5/B/z3dQZBVZkdJZbvtEXuAg==",
+      "type": "package",
+      "path": "propertychanged.fody/2.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/PropertyChanged.Fody.props",
+        "lib/net452/PropertyChanged.dll",
+        "lib/net452/PropertyChanged.xml",
+        "lib/netstandard1.0/PropertyChanged.dll",
+        "lib/netstandard1.0/PropertyChanged.xml",
+        "netclassicweaver/PropertyChanged.Fody.dll",
+        "netclassicweaver/PropertyChanged.Fody.pdb",
+        "netclassicweaver/PropertyChanged.Fody.xcf",
+        "netstandardweaver/PropertyChanged.Fody.dll",
+        "netstandardweaver/PropertyChanged.Fody.pdb",
+        "netstandardweaver/PropertyChanged.Fody.xcf",
+        "propertychanged.fody.2.6.1.nupkg.sha512",
+        "propertychanged.fody.nuspec"
+      ]
+    },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "sha512": "dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "type": "package",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ComponentModel.Annotations.dll",
+        "lib/netcore50/System.ComponentModel.Annotations.dll",
+        "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.1/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.1/System.ComponentModel.Annotations.xml",
+        "lib/portable-net45+win8/_._",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ComponentModel.Annotations.dll",
+        "ref/net461/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/de/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/es/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/fr/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/it/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ja/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ko/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ru/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.1/System.ComponentModel.Annotations.xml",
+        "ref/portable-net45+win8/_._",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.annotations.5.0.0.nupkg.sha512",
+        "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.IO/4.3.0": {
+      "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
+      "type": "package",
+      "path": "system.io/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net462/System.IO.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net462/System.IO.dll",
+        "ref/netcore50/System.IO.dll",
+        "ref/netcore50/System.IO.xml",
+        "ref/netcore50/de/System.IO.xml",
+        "ref/netcore50/es/System.IO.xml",
+        "ref/netcore50/fr/System.IO.xml",
+        "ref/netcore50/it/System.IO.xml",
+        "ref/netcore50/ja/System.IO.xml",
+        "ref/netcore50/ko/System.IO.xml",
+        "ref/netcore50/ru/System.IO.xml",
+        "ref/netcore50/zh-hans/System.IO.xml",
+        "ref/netcore50/zh-hant/System.IO.xml",
+        "ref/netstandard1.0/System.IO.dll",
+        "ref/netstandard1.0/System.IO.xml",
+        "ref/netstandard1.0/de/System.IO.xml",
+        "ref/netstandard1.0/es/System.IO.xml",
+        "ref/netstandard1.0/fr/System.IO.xml",
+        "ref/netstandard1.0/it/System.IO.xml",
+        "ref/netstandard1.0/ja/System.IO.xml",
+        "ref/netstandard1.0/ko/System.IO.xml",
+        "ref/netstandard1.0/ru/System.IO.xml",
+        "ref/netstandard1.0/zh-hans/System.IO.xml",
+        "ref/netstandard1.0/zh-hant/System.IO.xml",
+        "ref/netstandard1.3/System.IO.dll",
+        "ref/netstandard1.3/System.IO.xml",
+        "ref/netstandard1.3/de/System.IO.xml",
+        "ref/netstandard1.3/es/System.IO.xml",
+        "ref/netstandard1.3/fr/System.IO.xml",
+        "ref/netstandard1.3/it/System.IO.xml",
+        "ref/netstandard1.3/ja/System.IO.xml",
+        "ref/netstandard1.3/ko/System.IO.xml",
+        "ref/netstandard1.3/ru/System.IO.xml",
+        "ref/netstandard1.3/zh-hans/System.IO.xml",
+        "ref/netstandard1.3/zh-hant/System.IO.xml",
+        "ref/netstandard1.5/System.IO.dll",
+        "ref/netstandard1.5/System.IO.xml",
+        "ref/netstandard1.5/de/System.IO.xml",
+        "ref/netstandard1.5/es/System.IO.xml",
+        "ref/netstandard1.5/fr/System.IO.xml",
+        "ref/netstandard1.5/it/System.IO.xml",
+        "ref/netstandard1.5/ja/System.IO.xml",
+        "ref/netstandard1.5/ko/System.IO.xml",
+        "ref/netstandard1.5/ru/System.IO.xml",
+        "ref/netstandard1.5/zh-hans/System.IO.xml",
+        "ref/netstandard1.5/zh-hant/System.IO.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.io.4.3.0.nupkg.sha512",
+        "system.io.nuspec"
+      ]
+    },
+    "System.IO.Ports/7.0.0": {
+      "sha512": "0nWQjM5IofaIGpvkifN+LLuYwBG6BHlpmphLhhOJepcW12G8qToGuNDRgBzeTVBZzp33wVsESSZ8hUOCfq+8QA==",
+      "type": "package",
+      "path": "system.io.ports/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Ports.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.IO.Ports.targets",
+        "lib/net462/System.IO.Ports.dll",
+        "lib/net462/System.IO.Ports.xml",
+        "lib/net6.0/System.IO.Ports.dll",
+        "lib/net6.0/System.IO.Ports.xml",
+        "lib/net7.0/System.IO.Ports.dll",
+        "lib/net7.0/System.IO.Ports.xml",
+        "lib/netstandard2.0/System.IO.Ports.dll",
+        "lib/netstandard2.0/System.IO.Ports.xml",
+        "runtimes/unix/lib/net6.0/System.IO.Ports.dll",
+        "runtimes/unix/lib/net6.0/System.IO.Ports.xml",
+        "runtimes/unix/lib/net7.0/System.IO.Ports.dll",
+        "runtimes/unix/lib/net7.0/System.IO.Ports.xml",
+        "runtimes/win/lib/net6.0/System.IO.Ports.dll",
+        "runtimes/win/lib/net6.0/System.IO.Ports.xml",
+        "runtimes/win/lib/net7.0/System.IO.Ports.dll",
+        "runtimes/win/lib/net7.0/System.IO.Ports.xml",
+        "system.io.ports.7.0.0.nupkg.sha512",
+        "system.io.ports.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Net.Http/4.3.4": {
+      "sha512": "aOa2d51SEbmM+H+Csw7yJOuNZoHkrP2XnAurye5HWYgGVVU54YZDvsLUYRv6h18X3sPnjNCANmN7ZhIPiqMcjA==",
+      "type": "package",
+      "path": "system.net.http/4.3.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/Xamarinmac20/_._",
+        "lib/monoandroid10/_._",
+        "lib/monotouch10/_._",
+        "lib/net45/_._",
+        "lib/net46/System.Net.Http.dll",
+        "lib/portable-net45+win8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/Xamarinmac20/_._",
+        "ref/monoandroid10/_._",
+        "ref/monotouch10/_._",
+        "ref/net45/_._",
+        "ref/net46/System.Net.Http.dll",
+        "ref/netcore50/System.Net.Http.dll",
+        "ref/netstandard1.1/System.Net.Http.dll",
+        "ref/netstandard1.3/System.Net.Http.dll",
+        "ref/portable-net45+win8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll",
+        "runtimes/win/lib/net46/System.Net.Http.dll",
+        "runtimes/win/lib/netcore50/System.Net.Http.dll",
+        "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
+        "system.net.http.4.3.4.nupkg.sha512",
+        "system.net.http.nuspec"
+      ]
+    },
+    "System.Runtime/4.3.0": {
+      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "type": "package",
+      "path": "system.runtime/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net462/System.Runtime.dll",
+        "lib/portable-net45+win8+wp80+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net462/System.Runtime.dll",
+        "ref/netcore50/System.Runtime.dll",
+        "ref/netcore50/System.Runtime.xml",
+        "ref/netcore50/de/System.Runtime.xml",
+        "ref/netcore50/es/System.Runtime.xml",
+        "ref/netcore50/fr/System.Runtime.xml",
+        "ref/netcore50/it/System.Runtime.xml",
+        "ref/netcore50/ja/System.Runtime.xml",
+        "ref/netcore50/ko/System.Runtime.xml",
+        "ref/netcore50/ru/System.Runtime.xml",
+        "ref/netcore50/zh-hans/System.Runtime.xml",
+        "ref/netcore50/zh-hant/System.Runtime.xml",
+        "ref/netstandard1.0/System.Runtime.dll",
+        "ref/netstandard1.0/System.Runtime.xml",
+        "ref/netstandard1.0/de/System.Runtime.xml",
+        "ref/netstandard1.0/es/System.Runtime.xml",
+        "ref/netstandard1.0/fr/System.Runtime.xml",
+        "ref/netstandard1.0/it/System.Runtime.xml",
+        "ref/netstandard1.0/ja/System.Runtime.xml",
+        "ref/netstandard1.0/ko/System.Runtime.xml",
+        "ref/netstandard1.0/ru/System.Runtime.xml",
+        "ref/netstandard1.0/zh-hans/System.Runtime.xml",
+        "ref/netstandard1.0/zh-hant/System.Runtime.xml",
+        "ref/netstandard1.2/System.Runtime.dll",
+        "ref/netstandard1.2/System.Runtime.xml",
+        "ref/netstandard1.2/de/System.Runtime.xml",
+        "ref/netstandard1.2/es/System.Runtime.xml",
+        "ref/netstandard1.2/fr/System.Runtime.xml",
+        "ref/netstandard1.2/it/System.Runtime.xml",
+        "ref/netstandard1.2/ja/System.Runtime.xml",
+        "ref/netstandard1.2/ko/System.Runtime.xml",
+        "ref/netstandard1.2/ru/System.Runtime.xml",
+        "ref/netstandard1.2/zh-hans/System.Runtime.xml",
+        "ref/netstandard1.2/zh-hant/System.Runtime.xml",
+        "ref/netstandard1.3/System.Runtime.dll",
+        "ref/netstandard1.3/System.Runtime.xml",
+        "ref/netstandard1.3/de/System.Runtime.xml",
+        "ref/netstandard1.3/es/System.Runtime.xml",
+        "ref/netstandard1.3/fr/System.Runtime.xml",
+        "ref/netstandard1.3/it/System.Runtime.xml",
+        "ref/netstandard1.3/ja/System.Runtime.xml",
+        "ref/netstandard1.3/ko/System.Runtime.xml",
+        "ref/netstandard1.3/ru/System.Runtime.xml",
+        "ref/netstandard1.3/zh-hans/System.Runtime.xml",
+        "ref/netstandard1.3/zh-hant/System.Runtime.xml",
+        "ref/netstandard1.5/System.Runtime.dll",
+        "ref/netstandard1.5/System.Runtime.xml",
+        "ref/netstandard1.5/de/System.Runtime.xml",
+        "ref/netstandard1.5/es/System.Runtime.xml",
+        "ref/netstandard1.5/fr/System.Runtime.xml",
+        "ref/netstandard1.5/it/System.Runtime.xml",
+        "ref/netstandard1.5/ja/System.Runtime.xml",
+        "ref/netstandard1.5/ko/System.Runtime.xml",
+        "ref/netstandard1.5/ru/System.Runtime.xml",
+        "ref/netstandard1.5/zh-hans/System.Runtime.xml",
+        "ref/netstandard1.5/zh-hant/System.Runtime.xml",
+        "ref/portable-net45+win8+wp80+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.runtime.4.3.0.nupkg.sha512",
+        "system.runtime.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.Algorithms/4.3.0": {
+      "sha512": "W1kd2Y8mYSCgc3ULTAZ0hOP2dSdG5YauTb1089T0/kRcN2MpSAW1izOFROrJgxSlMn3ArsgHXagigyi+ibhevg==",
+      "type": "package",
+      "path": "system.security.cryptography.algorithms/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.Algorithms.dll",
+        "lib/net461/System.Security.Cryptography.Algorithms.dll",
+        "lib/net463/System.Security.Cryptography.Algorithms.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.Algorithms.dll",
+        "ref/net461/System.Security.Cryptography.Algorithms.dll",
+        "ref/net463/System.Security.Cryptography.Algorithms.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.Algorithms.dll",
+        "ref/netstandard1.4/System.Security.Cryptography.Algorithms.dll",
+        "ref/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/osx/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/net46/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/net463/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/netcore50/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+        "system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
+        "system.security.cryptography.algorithms.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.Encoding/4.3.0": {
+      "sha512": "1DEWjZZly9ae9C79vFwqaO5kaOlI5q+3/55ohmq/7dpDyDfc8lYe7YVxJUZ5MF/NtbkRjwFRo14yM4OEo9EmDw==",
+      "type": "package",
+      "path": "system.security.cryptography.encoding/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.Encoding.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.Encoding.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/de/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/es/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/fr/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/it/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/ja/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/ko/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/ru/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.Cryptography.Encoding.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+        "runtimes/win/lib/net46/System.Security.Cryptography.Encoding.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+        "system.security.cryptography.encoding.4.3.0.nupkg.sha512",
+        "system.security.cryptography.encoding.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.Primitives/4.3.0": {
+      "sha512": "7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
+      "type": "package",
+      "path": "system.security.cryptography.primitives/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.Primitives.dll",
+        "lib/netstandard1.3/System.Security.Cryptography.Primitives.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.Primitives.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.Primitives.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.security.cryptography.primitives.4.3.0.nupkg.sha512",
+        "system.security.cryptography.primitives.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.X509Certificates/4.3.0": {
+      "sha512": "t2Tmu6Y2NtJ2um0RtcuhP7ZdNNxXEgUm2JeoA/0NvlMjAhKCnM1NX07TDl3244mVp3QU6LPEhT3HTtH1uF7IYw==",
+      "type": "package",
+      "path": "system.security.cryptography.x509certificates/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.X509Certificates.dll",
+        "lib/net461/System.Security.Cryptography.X509Certificates.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.X509Certificates.dll",
+        "ref/net461/System.Security.Cryptography.X509Certificates.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.X509Certificates.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/de/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/es/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/fr/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/it/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/ja/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/ko/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/ru/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.dll",
+        "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/de/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/es/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/fr/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/it/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/ja/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/ko/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/ru/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/zh-hans/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/zh-hant/System.Security.Cryptography.X509Certificates.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll",
+        "runtimes/win/lib/net46/System.Security.Cryptography.X509Certificates.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll",
+        "runtimes/win/lib/netcore50/System.Security.Cryptography.X509Certificates.dll",
+        "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll",
+        "system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
+        "system.security.cryptography.x509certificates.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "Fody >= 4.2.1",
+      "Newtonsoft.Json >= 13.0.3",
+      "Polly >= 7.2.3",
+      "PropertyChanged.Fody >= 2.6.1",
+      "System.ComponentModel.Annotations >= 5.0.0",
+      "System.IO >= 4.3.0",
+      "System.IO.Ports >= 7.0.0",
+      "System.Net.Http >= 4.3.4",
+      "System.Runtime >= 4.3.0",
+      "System.Security.Cryptography.Algorithms >= 4.3.0",
+      "System.Security.Cryptography.Encoding >= 4.3.0",
+      "System.Security.Cryptography.Primitives >= 4.3.0",
+      "System.Security.Cryptography.X509Certificates >= 4.3.0",
+      "nanoFramework.Tools.Debugger.Net >= 2.4.34",
+      "nanoFramework.Tools.FirmwareFlasher >= 2.5.38"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\soura\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\DEV & FILES\\PLUG_POWER_FCT\\PLU_POWER_FCT\\PLU_POWER_FCT\\PLU_POWER_FCT.vbproj",
+      "projectName": "PLU_POWER_FCT",
+      "projectPath": "D:\\DEV & FILES\\PLUG_POWER_FCT\\PLU_POWER_FCT\\PLU_POWER_FCT\\PLU_POWER_FCT.vbproj",
+      "packagesPath": "C:\\Users\\soura\\.nuget\\packages\\",
+      "outputPath": "D:\\DEV & FILES\\PLUG_POWER_FCT\\PLU_POWER_FCT\\PLU_POWER_FCT\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\soura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "dependencies": {
+          "Fody": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[4.2.1, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
+          },
+          "Polly": {
+            "target": "Package",
+            "version": "[7.2.3, )"
+          },
+          "PropertyChanged.Fody": {
+            "target": "Package",
+            "version": "[2.6.1, )"
+          },
+          "System.ComponentModel.Annotations": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
+          "System.IO": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.IO.Ports": {
+            "target": "Package",
+            "version": "[7.0.0, )"
+          },
+          "System.Net.Http": {
+            "target": "Package",
+            "version": "[4.3.4, )"
+          },
+          "System.Runtime": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.Security.Cryptography.Algorithms": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.Security.Cryptography.Encoding": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.Security.Cryptography.Primitives": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.Security.Cryptography.X509Certificates": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "nanoFramework.Tools.Debugger.Net": {
+            "target": "Package",
+            "version": "[2.4.34, )"
+          },
+          "nanoFramework.Tools.FirmwareFlasher": {
+            "target": "Package",
+            "version": "[2.5.38, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}
